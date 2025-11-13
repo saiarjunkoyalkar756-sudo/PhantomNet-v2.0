@@ -6,10 +6,6 @@
 [![Issues](https://img.shields.io/github/issues/saiarjunkoyalkar756-sudo/PhantomNet-v2.0)]()
 [![Contributors](https://img.shields.io/github/contributors/saiarjunkoyalkar756-sudo/PhantomNet-v2.0)]()
 
-Here is your complete, professional, production-ready README.md for PhantomNet v2.0 — beautifully structured, enterprise-grade, and suitable for GitHub public release.
-
-You can copy–paste this entire file into your README.md.
-
 
 ---
 
