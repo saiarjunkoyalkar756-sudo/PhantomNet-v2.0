@@ -1,3 +1,11 @@
+[![Release v2.0](https://img.shields.io/badge/release-v2.0-blue.svg)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](/LICENSE)
+[![Python](https://img.shields.io/badge/python-3.11-%233776AB.svg)]()
+[![Node](https://img.shields.io/badge/node-18-%234CC61E.svg)]()
+[![Build Status](https://img.shields.io/github/actions/workflow/status/saiarjunkoyalkar756-sudo/PhantomNet-v2.0/ci.yml?branch=main)]()
+[![Issues](https://img.shields.io/github/issues/saiarjunkoyalkar756-sudo/PhantomNet-v2.0)]()
+[![Contributors](https://img.shields.io/github/contributors/saiarjunkoyalkar756-sudo/PhantomNet-v2.0)]()
+
 Here is your complete, professional, production-ready README.md for PhantomNet v2.0 — beautifully structured, enterprise-grade, and suitable for GitHub public release.
 
 You can copy–paste this entire file into your README.md.
