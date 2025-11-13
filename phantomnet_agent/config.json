@@ -1,0 +1,17 @@
+{
+    "ports": [2222, 8080, 3306, 2121, 2323, 80, 443, 3389, 445, 25, 53, 1433],
+    "honeypots": {
+        "2222": "ssh_honeypot.SSHHoneypot",
+        "8080": "tcp_honeypot.TCPHoneypot",
+        "3306": "tcp_honeypot.TCPHoneypot",
+        "2121": "ftp_honeypot.FTPHoneypot",
+        "2323": "telnet_honeypot.TelnetHoneypot",
+        "80": "tcp_honeypot.TCPHoneypot",
+        "443": "tcp_honeypot.TCPHoneypot",
+        "3389": "tcp_honeypot.TCPHoneypot",
+        "445": "tcp_honeypot.TCPHoneypot",
+        "25": "tcp_honeypot.TCPHoneypot",
+        "53": "tcp_honeypot.TCPHoneypot",
+        "1433": "tcp_honeypot.TCPHoneypot"
+    }
+}

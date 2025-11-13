@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.5",
+    "@tailwindcss/postcss": "^4.1.17",
+    "chart.js": "^4.5.1",
+    "customize-cra": "^1.0.0",
+    "leaflet": "^1.9.4",
+    "qrcode.react": "^4.2.0",
+    "react-app-rewired": "^2.2.1",
+    "react-chartjs-2": "^5.3.1",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.25.1",
+    "react-tabs": "^6.1.0",
+    "react-toastify": "^11.0.5",
+    "recharts": "^3.4.1"
+  },
+  "scripts": {
+    "start": "POSTCSS_CONFIG=./postcss.config.js EXTEND_ESLINT=true NODE_PATH=src/ react-app-rewired start",
+    "build": "POSTCSS_CONFIG=./postcss.config.js react-scripts build --verbose",
+    "test": "react-app-rewired test",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^4.1.16"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

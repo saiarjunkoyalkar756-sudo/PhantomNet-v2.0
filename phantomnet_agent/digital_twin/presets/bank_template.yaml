@@ -1,0 +1,30 @@
+template_id: bank_webapp
+description: Fake bank web application with login, transfers, and invoices
+category: bank
+deception_level: 4
+metadata:
+  org: "Global Trust Bank"
+services:
+  - name: webapp
+    image: phantomnet/fake-bank-app:latest
+    ports:
+      - "8080:80"
+    env:
+      APP_BRAND_NAME: "Global Trust Bank"
+      POSTGRES_HOST: "db"
+    fake_endpoints:
+      - "/login"
+      - "/portal/transfers"
+      - "/admin/invoices"
+  - name: db
+    image: postgres:13-alpine
+    ports:
+      - "5432:5432"
+    env:
+      POSTGRES_USER: "finance"
+      POSTGRES_PASSWORD: "supersecretpassword"
+      POSTGRES_DB: "invoices"
+    files:
+      /docker-entrypoint-initdb.d/init.sql: |
+        CREATE TABLE invoices (id SERIAL PRIMARY KEY, amount INT, user_id INT);
+        INSERT INTO invoices (amount, user_id) VALUES (1000, 1), (2500, 2);

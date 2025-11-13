@@ -1,0 +1,291 @@
+:root {
+  --background-color: #282c34;
+  --text-color: white;
+  --header-background: #282c34;
+  --border-color: #444;
+  --tab-background: #1a1a1a;
+  --tab-selected-background: #1a1a1a;
+  --tab-selected-border: #444;
+  --button-primary-background: #007bff;
+  --button-primary-hover: #0056b3;
+  --button-danger-background: #dc3545;
+  --button-danger-hover: #c82333;
+  --chart-text-color: #fff;
+  --log-even-row-background: #333;
+  --log-hover-row-background: #444;
+}
+
+body.light-mode {
+  --background-color: #f0f2f5;
+  --text-color: #333;
+  --header-background: #ffffff;
+  --border-color: #ddd;
+  --tab-background: #f8f9fa;
+  --tab-selected-background: #ffffff;
+  --tab-selected-border: #dee2e6;
+  --button-primary-background: #007bff;
+  --button-primary-hover: #0056b3;
+  --button-danger-background: #dc3545;
+  --button-danger-hover: #c82333;
+  --chart-text-color: #333;
+  --log-even-row-background: #f2f2f2;
+  --log-hover-row-background: #e9ecef;
+}
+
+.App {
+  text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.App-header {
+  background-color: var(--header-background);
+  padding: 20px;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid var(--border-color);
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.react-tabs__tab--selected {
+  background: var(--tab-selected-background);
+  border-color: var(--tab-selected-border);
+  color: var(--text-color);
+  border-radius: 5px 5px 0 0;
+}
+
+.react-tabs__tab--disabled {
+  color: #666;
+  cursor: default;
+}
+
+.react-tabs__tab:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: '';
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: var(--tab-selected-background);
+}
+
+.react-tabs__tab-panel {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+  opacity: 1;
+}
+
+.log-container,
+.blockchain-container,
+.config-container,
+.attack-trends-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--header-background);
+  border-radius: 8px;
+  color: var(--text-color);
+}
+
+.log-table-container {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.log-table th,
+.log-table td {
+  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.log-table th {
+  background-color: var(--header-background);
+  font-weight: bold;
+}
+
+.log-table tbody tr:nth-child(even) {
+  background-color: var(--log-even-row-background);
+}
+
+.log-table tbody tr:hover {
+  background-color: var(--log-hover-row-background);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.new-log-entry {
+  animation: highlightNewLog 2s ease-out;
+}
+
+@keyframes highlightNewLog {
+  0% {
+    background-color: rgba(0, 123, 255, 0.5); /* Blue highlight */
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+pre {
+  text-align: left;
+  background-color: var(--tab-background);
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  flex-direction: column; /* Added for spinner and text */
+  color: var(--text-color);
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid var(--text-color);
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px; /* Space between spinner and text */
+}
+
+.logout-button {
+  background-color: var(--button-danger-background);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition:
+    background-color 0.2s ease-in-out,
+    transform 0.1s ease-in-out;
+  margin-left: 10px; /* Added margin for spacing */
+}
+
+.logout-button:hover {
+  background-color: var(--button-danger-hover);
+}
+
+.logout-button:active {
+  transform: scale(0.98);
+}
+
+.toggle-button {
+  background-color: var(--button-primary-background);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition:
+    background-color 0.2s ease-in-out,
+    transform 0.1s ease-in-out;
+  margin-left: 10px; /* Added margin for spacing */
+}
+
+.toggle-button:hover {
+  background-color: var(--button-primary-hover);
+}
+
+.toggle-button:active {
+  transform: scale(0.98);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+.chart-item {
+  background-color: var(--tab-background);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.chart-item h3 {
+  color: var(--chart-text-color);
+}
+
+.chart-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.chart-row > div {
+  flex: 1;
+  min-width: 45%; /* Adjust as needed */
+  margin: 10px;
+}
+
+.chart-row .full-width {
+  min-width: 95%;
+}

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Node
+node_modules/
+.npm/
+npm-debug.log
+
+# Logs
+logs/
+
+# Secrets
+secret.key
+blockchain.json

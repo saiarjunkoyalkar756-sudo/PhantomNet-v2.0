@@ -1,0 +1,26 @@
+template_id: aws_s3_small
+description: Small fake S3-like bucket + metadata endpoints
+category: cloud
+deception_level: 3
+metadata:
+  org: "Acme Corp"
+services:
+  - name: fake_s3
+    image: phantomnet/fake-s3:latest
+    ports:
+      - "9000:9000"
+    env:
+      AWS_ACCESS_KEY_ID: "FAKEACCESS"
+      AWS_SECRET_ACCESS_KEY: "FAKESECRET"
+    files:
+      /data/bucket1/object1.txt: "This is fake file 1. Contains invoice-1234.pdf reference"
+    fake_endpoints:
+      - "/bucket1/object1.txt"
+  - name: metadata_service
+    image: phantomnet/fake-metadata:latest
+    ports:
+      - "8080:8080"
+    files:
+      /etc/metadata/instance-id: "i-0fake123"
+    fake_endpoints:
+      - "/latest/meta-data/iam/security-credentials/"
